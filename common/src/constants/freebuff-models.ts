@@ -1453,8 +1453,8 @@ export function canFreebuffModelSpawnGeminiThinker(modelId: string): boolean {
  */
 export const FREEBUFF_MODEL_CONTEXT_WINDOWS: Record<string, number> = {
   [FREEBUFF_MINIMAX_M3_MODEL_ID]: 524_288,
-  [FREEBUFF_OLLAMA_QWEN_7B_MODEL_ID]: 131_072,
-  [FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID]: 131_072,
+  ['ollama/qwen2.5-coder:7b']: 131_072,
+  ['ollama/qwen2.5-coder:1.5b']: 131_072,
   [FREEBUFF_DEEPSEEK_V4_FLASH_MODEL_ID]: 1_048_576,
   // Fast mode is the same upstream model on DeepSeek's own API, so the
   // rejection above is its rejection too.
