@@ -2261,7 +2261,7 @@ describe('loopAgentSteps - runAgentStep vs runProgrammaticStep behavior', () => 
         throw new APICallError({
           statusCode: 403,
           message: 'Forbidden',
-          url: 'https://api.codebuff.com/v1/chat/completions',
+          url: 'https://localhost:11434.com/v1/chat/completions',
           requestBodyValues: {},
           responseBody: JSON.stringify({
             error: 'free_mode_unavailable',
@@ -2313,7 +2313,7 @@ describe('loopAgentSteps - runAgentStep vs runProgrammaticStep behavior', () => 
         throw new APICallError({
           statusCode: 500,
           message: 'Internal Server Error',
-          url: 'https://api.codebuff.com/v1/chat/completions',
+          url: 'https://localhost:11434.com/v1/chat/completions',
           requestBodyValues: {},
           responseBody: undefined,
           isRetryable: true,
@@ -2352,7 +2352,7 @@ describe('loopAgentSteps - runAgentStep vs runProgrammaticStep behavior', () => 
         throw new APICallError({
           statusCode: 428,
           message: 'Precondition Required',
-          url: 'https://api.codebuff.com/v1/chat/completions',
+          url: 'https://localhost:11434.com/v1/chat/completions',
           requestBodyValues: {},
           responseBody: JSON.stringify({
             error: 'waiting_room_required',
@@ -2399,7 +2399,7 @@ describe('loopAgentSteps - runAgentStep vs runProgrammaticStep behavior', () => 
       const apiError = new APICallError({
         statusCode: 409,
         message: 'Conflict',
-        url: 'https://api.codebuff.com/v1/chat/completions',
+        url: 'https://localhost:11434.com/v1/chat/completions',
         requestBodyValues: {},
         responseBody: JSON.stringify({
           error: 'session_superseded',

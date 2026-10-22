@@ -262,7 +262,7 @@ describe('API Integration', () => {
 
     test('should handle DNS resolution failures gracefully', async () => {
       const fetchMock = setFetchMock(async () => {
-        const error = new Error('getaddrinfo ENOTFOUND api.codebuff.local')
+        const error = new Error('getaddrinfo ENOTFOUND localhost:11434.local')
         error.name = 'ENOTFOUND'
         throw error
       })

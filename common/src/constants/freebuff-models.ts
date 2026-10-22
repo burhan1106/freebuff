@@ -20,6 +20,8 @@ import {
   FREEBUFF_DEEPSEEK_V4_FLASH_MODEL_ID,
   FREEBUFF_DEEPSEEK_V4_PRO_MODEL_ID,
   FREEBUFF_MINIMAX_M3_MODEL_ID,
+  FFREEBUFF_OLLAMA_QWEN_7B_MODEL_ID,
+  FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID,
 } from './freebuff-model-ids'
 import {
   FREEBUFF_AI_TRAINING_NOTICE,
@@ -1451,6 +1453,8 @@ export function canFreebuffModelSpawnGeminiThinker(modelId: string): boolean {
  */
 export const FREEBUFF_MODEL_CONTEXT_WINDOWS: Record<string, number> = {
   [FREEBUFF_MINIMAX_M3_MODEL_ID]: 524_288,
+  [FREEBUFF_OLLAMA_QWEN_7B_MODEL_ID]: 131_072,
+  [FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID]: 131_072,
   [FREEBUFF_DEEPSEEK_V4_FLASH_MODEL_ID]: 1_048_576,
   // Fast mode is the same upstream model on DeepSeek's own API, so the
   // rejection above is its rejection too.
@@ -2453,6 +2457,26 @@ export const FREEBUFF_PROVISIONED_MODELS = [
   LLAMA_4_MAVERICK_MODEL,
 ] as const satisfies readonly FreebuffModelOption[]
 
+const OLLAMA_QWEN_7B_MODEL = {
+  id: FREEBUFF_OLLAMA_QWEN_7B_MODEL_ID,
+  displayName: 'Ollama Qwen 2.5 Coder (7B)',
+  tagline: 'Süresiz & Yerel Yapay Zeka',
+  availability: 'always',
+  dataUse: 'service',
+  premium: false,
+  multimodal: false,
+} satisfies FreebuffModelOption;
+
+const OLLAMA_QWEN_1B_MODEL = {
+  id: FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID,
+  displayName: 'Ollama Qwen 2.5 Coder (1.5B)',
+  tagline: 'Süresiz & Hafif Yerel Yapay Zeka',
+  availability: 'always',
+  dataUse: 'service',
+  premium: false,
+  multimodal: false,
+} satisfies FreebuffModelOption;
+
 const MINIMAX_M3_MODEL = {
   id: FREEBUFF_MINIMAX_M3_MODEL_ID,
   displayName: 'MiniMax M3',
@@ -3071,6 +3095,8 @@ const SPACE_BUNNY_ALPHA_MODEL = {
 } as const satisfies FreebuffModelOption
 
 export const SUPPORTED_FREEBUFF_MODELS = [
+  OLLAMA_QWEN_7B_MODEL,
+  OLLAMA_QWEN_1B_MODEL,
   OX_ALPHA_MODEL,
   SPACE_BUNNY_ALPHA_MODEL,
   DEEPSEEK_V4_PRO_MODEL,
@@ -3345,6 +3371,8 @@ export const FREEBUFF_PAUSED_FREE_MODEL_IDS: readonly string[] = [
   // refusal here is the client retry loop of #1801. Listed here it stays recognised, is coerced to the
   // fallback at admission, and is served to nobody.
   FREEBUFF_MINIMAX_M3_MODEL_ID,
+  FREEBUFF_OLLAMA_QWEN_7B_MODEL_ID,
+  FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID,
   // Withdrawn from free mode entirely on 2026-08-26, on cost. Pro was the
   // dearest row we serve — $0.66 in / $0.022 cache read / $1.98 out per M
   // off-peak on DeepSeek direct, exactly double inside the peak windows — and

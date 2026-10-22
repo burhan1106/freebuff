@@ -8,6 +8,8 @@
 export const FREEBUFF_DEEPSEEK_V4_FLASH_MODEL_ID = 'deepseek/deepseek-v4-flash'
 export const FREEBUFF_DEEPSEEK_V4_PRO_MODEL_ID = 'deepseek/deepseek-v4-pro'
 export const FREEBUFF_MINIMAX_M3_MODEL_ID = 'minimax/minimax-m3'
+export const FREEBUFF_OLLAMA_QWEN_7B_MODEL_ID = 'ollama/qwen2.5-coder:7b'
+export const FREEBUFF_OLLAMA_QWEN_1B_MODEL_ID = 'ollama/qwen2.5-coder:1.5b'
 /** DeepSeek V4.1 Flash in FAST MODE: the same model as
  *  FREEBUFF_DEEPSEEK_V4_FLASH_MODEL_ID, served ONLY by DeepSeek's own API
  *  (never the rationed Luminal lane) and run on the `base3-fast` harness,
